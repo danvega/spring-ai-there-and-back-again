@@ -6,3 +6,18 @@ spring:
       api-key: ${SPRING_AI_ANTHROPIC_API_KEY}
       chat:
         model: claude-haiku-4-5
+    mcp:
+      server:
+        name: journey
+        protocol: STREAMABLE
+      client:
+        stdio:
+          connections:
+            filesystem:
+              command: npx
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-filesystem"
+                - "./journeys"
+
+
