@@ -1,0 +1,53 @@
+### Camp 1: The Shire. Our first prompt.
+GET http://localhost:8080/shire/ask
+    ?prompt=Plan a perfect day in the Shire, starting with second breakfast.
+
+### Same question, after adding the system prompt
+GET http://localhost:8080/shire/ask
+    ?prompt=Plan a perfect day in the Shire, starting with second breakfast.
+
+### Streaming
+### http --stream --body :8080/shire/stream prompt=="Tell the story of a hobbit's first day away from the Shire, in about 300 words."
+GET http://localhost:8080/shire/stream?
+    prompt=Tell%20the%20story%20of%20a%20hobbit's%20first%20day%20away%20from%20the%20Shire
+
+
+### Structured output: a messy booking email in, a Journey record out
+POST http://localhost:8080/shire/journey
+Content-Type: text/plain
+
+Subject: Your adventure is booked! Bag End to Mordor (and hopefully back)
+
+Dear FRODO BAGGINS,
+
+Thank you for choosing Middle-earth Travel Co. Your itinerary is below.
+Booking reference: MET-3018-RING
+
+DEPARTURE
+Bag End, Hobbiton, The Shire
+Leaves Wed, Sep 23 at dusk (on foot, pony optional)
+
+STOP 1: BREE
+The Prancing Pony
+Check-in: 09/29/2026
+Confirmation #: PP-0929
+Note: a Ranger called Strider will meet you at the bar. Probably.
+
+STOP 2: RIVENDELL
+The Last Homely House
+Arrives 20 October 2026
+Council meeting: Oct 25 (attendance mandatory)
+Ref: RIV-1020-ELROND
+
+STOP 3: MORDOR
+Mount Doom (day trip)
+Arrival: 2027-03-25
+Lodging: none available. Travelers are advised not to linger.
+Ref: MD-0325
+
+Why walk? Upgrade to Eagle Class for just 39 gold pieces!
+Download our app for second-breakfast deals along your route.
+
+You're receiving this because you booked with Middle-earth Travel Co.
+Unsubscribe | Privacy Policy
+(c) 2026 Middle-earth Travel Co. All rights reserved.

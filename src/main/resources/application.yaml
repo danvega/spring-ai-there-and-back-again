@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: journey
+  ai:
+    anthropic:
+      api-key: ${SPRING_AI_ANTHROPIC_API_KEY}
+      chat:
+        model: claude-haiku-4-5
