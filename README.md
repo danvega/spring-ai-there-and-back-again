@@ -23,7 +23,7 @@ git checkout 02-bree
 
 ## Requirements
 
-- Java 27
+- Java 25 or later
 - An [Anthropic API key](https://console.anthropic.com/)
 - Node.js, from Rivendell on (it runs the filesystem MCP server)
 - [Claude Code](https://claude.com/claude-code), if you want to call the app's tools from Claude
@@ -45,6 +45,7 @@ claude mcp add --transport http journey http://localhost:8080/mcp
 
 ## Good to know
 
+- Getting an error on every request? Check that `SPRING_AI_ANTHROPIC_API_KEY` is set. The app still starts without it, but every call to Claude fails.
 - The app uses `claude-haiku-4-5`. With Spring AI 2.0.1, Claude Opus 5.5 and Sonnet 5.5 return empty responses, because their thinking block comes back first.
 - The filesystem MCP server can only read and write inside the `journeys/` folder.
 - The MCP server needs `protocol: STREAMABLE` in `application.yaml`. Without it, Spring AI uses the older SSE transport.
