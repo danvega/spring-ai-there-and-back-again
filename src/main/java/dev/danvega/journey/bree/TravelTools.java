@@ -25,7 +25,7 @@ public class TravelTools {
             case "bree" -> "Grey skies and light drizzle.";
             case "rivendell" -> "Cold and misty. Rain by evening.";
             case "mordor" -> "Ash and smoke. Visibility poor. Do not linger.";
-            default -> "Unknown. The map ends here.";
+            default -> "Unknown place. Try one of: the Shire, Bree, Rivendell, Mordor.";
         };
     }
 
