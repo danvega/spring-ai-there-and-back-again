@@ -23,8 +23,7 @@ class RivendellController {
     String ask(@RequestParam String prompt) {
         return chatClient.prompt()
                 .user(prompt)
-                .tools(new TravelTools())
-                .toolCallbacks(mcpTools)
+                .tools(new TravelTools(), mcpTools)
                 .call()
                 .content();
     }
