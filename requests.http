@@ -71,3 +71,7 @@ GET http://localhost:8080/bree/ask
 ### Rivendell 1: your app as an MCP client. Watch for getWeather(Rivendell), then packing-list.md in journeys/.
 GET http://localhost:8080/rivendell/ask
     ?prompt=Check the weather in Rivendell, then save a packing list to packing-list.md
+
+### Mordor: give it a goal, not a question. Watch the console, then route-to-mordor.md in journeys/.
+GET http://localhost:8080/mordor/plan
+    ?goal=Plan the fastest safe route from Rivendell to Mount Doom and save it to route-to-mordor.md
