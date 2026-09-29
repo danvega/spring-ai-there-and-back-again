@@ -26,7 +26,7 @@ public class TravelTools {
             case "rivendell" -> "Cold and misty. Rain by evening.";
             case "caradhras" -> "Blizzard. The pass is blocked by snow.";
             case "mordor" -> "Ash and smoke. Visibility poor. Do not linger.";
-            default -> "Unknown. The map ends here.";
+            default -> "Unknown place. Try one of: the Shire, Bree, Rivendell, Mordor.";
         };
     }
 
