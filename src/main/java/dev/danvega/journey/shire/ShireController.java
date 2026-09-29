@@ -16,8 +16,6 @@ public class ShireController {
 
     @GetMapping("/shire/ask")
     public String ask(@RequestParam String prompt) {
-
-        // move it to the chat client
         var system = """
             You are a hobbit who has never left the Shire.
             Answer in 3 short bullet points.

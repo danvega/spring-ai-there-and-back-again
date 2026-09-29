@@ -6,11 +6,10 @@ GET http://localhost:8080/shire/ask
 GET http://localhost:8080/shire/ask
     ?prompt=Plan a perfect day in the Shire, starting with second breakfast.
 
-### Streaming
-### http --stream --body :8080/shire/stream prompt=="Tell the story of a hobbit's first day away from the Shire, in about 300 words."
-GET http://localhost:8080/shire/stream?
-    prompt=Tell%20the%20story%20of%20a%20hobbit's%20first%20day%20away%20from%20the%20Shire
-
+### Streaming. Best shown from a terminal, since IntelliJ shows a plain-text stream all at once:
+# http --stream --body :8080/shire/stream prompt=="Tell the story of a hobbit's first day away from the Shire, in about 300 words."
+GET http://localhost:8080/shire/stream
+    ?prompt=Tell the story of a hobbit's first day away from the Shire, in about 300 words.
 
 ### Structured output: a messy booking email in, a Journey record out
 POST http://localhost:8080/shire/journey
