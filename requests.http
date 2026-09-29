@@ -51,3 +51,20 @@ Download our app for second-breakfast deals along your route.
 You're receiving this because you booked with Middle-earth Travel Co.
 Unsubscribe | Privacy Policy
 (c) 2026 Middle-earth Travel Co. All rights reserved.
+
+
+### Bree 1: the gap. The Shire endpoint has no tools, so the model can't know the date.
+GET http://localhost:8080/shire/ask
+    ?prompt=What is today's date?
+
+### Bree 2: same question with tools. Watch the console for getCurrentDate().
+GET http://localhost:8080/bree/ask
+    ?prompt=What is today's date?
+
+### Bree 3: the real question. Watch the console for getWeather(Rivendell).
+GET http://localhost:8080/bree/ask
+    ?prompt=What should I pack for Rivendell?
+
+### Bree 4: watch the model choose. No tools needed, so the console stays quiet.
+GET http://localhost:8080/bree/ask
+    ?prompt=Tell me a joke about hobbits.
