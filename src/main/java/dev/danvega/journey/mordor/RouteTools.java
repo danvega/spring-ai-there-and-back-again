@@ -1,5 +1,6 @@
 package dev.danvega.journey.mordor;
 
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Map;
 
@@ -29,9 +30,16 @@ public class RouteTools {
             "cirith ungol", List.of(new Route("Mount Doom", 3, "The end of the road.")));
 
     @Tool(description = "List the routes leaving a place in Middle-earth, with travel days and conditions")
-    List<Route> getRoutes(@ToolParam(description = "The place to leave from, for example Rivendell") String from) {
+    List<Route> getRoutes(@ToolParam(description = "The place to leave from. One of: Rivendell, Caradhras, Moria, " +
+            "Lothlorien, Emyn Muil, Dead Marshes, Black Gate, Cirith Ungol") String from) {
         log.info("Tool called: getRoutes({})", from);
-        return ROUTES.getOrDefault(from.toLowerCase(), List.of());
+        return ROUTES.getOrDefault(key(from), List.of());
+    }
+
+    // accept small spelling differences, like "Lothlórien" or "the Dead Marshes"
+    private static String key(String place) {
+        String plain = Normalizer.normalize(place, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+        return plain.toLowerCase().trim().replaceFirst("^the ", "").replaceFirst("^mines of ", "");
     }
 
     @Tool(description = "Ask the Great Eagles to fly you to a destination")
