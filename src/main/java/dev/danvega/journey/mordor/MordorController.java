@@ -31,8 +31,7 @@ class MordorController {
     String plan(@RequestParam String goal) {
         return chatClient.prompt()
                 .user(goal)
-                .tools(new TravelTools(), new RouteTools())
-                .toolCallbacks(mcpTools)
+                .tools(new TravelTools(), new RouteTools(), mcpTools)
                 .call()
                 .content();
     }
