@@ -20,6 +20,12 @@ class TravelToolsTest {
         assertThat(tools.getWeather("Rivendell")).isEqualTo("Cold and misty. Rain by evening.");
     }
 
+    // Mordor: the blizzard is why the agent has to re-plan
+    @Test
+    void caradhrasIsSnowedIn() {
+        assertThat(tools.getWeather("Caradhras")).startsWith("Blizzard");
+    }
+
     // tells the model which places it can ask about, so it can try again
     @Test
     void unknownPlaceListsKnownPlaces() {
