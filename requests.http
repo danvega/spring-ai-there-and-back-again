@@ -67,6 +67,7 @@ GET http://localhost:8080/bree/ask
 ### Bree 4: watch the model choose. No tools needed, so the console stays quiet.
 GET http://localhost:8080/bree/ask
     ?prompt=Tell me a joke about hobbits.
+
 ### Rivendell 1: your app as an MCP client. Watch for getWeather(Rivendell), then packing-list.md in journeys/.
 GET http://localhost:8080/rivendell/ask
     ?prompt=Check the weather in Rivendell, then save a packing list to packing-list.md
